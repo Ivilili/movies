@@ -57,6 +57,34 @@
     }
 
 }
+
+.loader {
+	margin: 200px auto;
+	width: 100px;
+	height: 100px;
+
+	&:after {
+		content: " ";
+		display: block;
+		width: 64px;
+		height: 64px;
+		margin: 8px;
+		border-radius: 50%;
+		border: 6px solid #ffa7c4;
+		border-color: #ffa7c4 transparent #ffa7c4 transparent;
+		animation: loader 1.2s linear infinite;
+		transition: all 0.5s ease;
+	}
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 .open {
     visibility: visible;
     opacity: 1;

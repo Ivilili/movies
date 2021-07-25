@@ -1,10 +1,11 @@
 import "./MovieDetails.scss";
 
 const MovieDetails = (props) => {
-  const { toggle, open, details } = props;
+  const { toggle, open, details, loading } = props;
   return (
     <div className={open ? "MovieDetails open" : "MovieDetails"}>
       <div className="MovieDetails__container">
+        {loading && <div className="loader"></div>}
         <span className="MovieDetails__close" onClick={() => toggle()}>
           &#10005;
         </span>

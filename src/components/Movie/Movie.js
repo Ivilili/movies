@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Movie.scss";
 
 const Movie = (props) => {

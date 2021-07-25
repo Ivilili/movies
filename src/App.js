@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Search from "./components/Search/Search";
 import Movie from "./components/Movie/Movie";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
 
 import "./App.scss";
-import MovieDetails from "./components/MovieDetails/MovieDetails";
 
 function App() {
   const [series, setSeries] = useState([]);
   const [details, setDetails] = useState([]);
   const [search, setSearch] = useState("");
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const getSeries = async () => {
     await fetch(
@@ -20,19 +21,20 @@ function App() {
   };
 
   const getDetails = async (id) => {
+    setLoading(true);
     await fetch(
       `https://imdb-api.com/en/API/Title/${process.env.REACT_APP_API_KEY}/${id}/FullActor,FullCast,Posters,Images,Ratings,`
     )
       .then((res) => res.json())
-      .then((data) => setDetails(data));
+      .then((data) => {
+        setDetails(data);
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
     getSeries();
   }, [search]);
-
-  //console.log("series", series);
-  console.log("details", details);
 
   return (
     <div className="App">
@@ -56,6 +58,7 @@ function App() {
           open={open}
           toggle={() => setOpen(!open)}
           details={details}
+          loading={loading}
         />
       </div>
     </div>
