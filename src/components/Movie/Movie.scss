@@ -1,0 +1,56 @@
+.Movie {
+  background: #000000;
+	width: 100%;
+	max-width: 315px;
+  transition: all 0.4s;
+  margin: 0 auto 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.4s;
+  }
+
+  &__title {
+    line-height: 1;
+    font-size: 20px;
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding:0;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  &__name {
+    color: #ffa7c4;
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+
+  &__image {
+  padding:0;
+	margin: 0;
+	height: 367px;
+	width: 100%;
+  height: 100%;
+  object-fit: contain;
+	display: block;
+  z-index: 1;
+  }
+
+  &__button {
+    border: 3px solid #ffa7c4;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: transparent;
+    text-transform: uppercase;
+    height: 40px;
+    margin: 10px 0 20px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,65 @@
+.MovieDetails {
+    position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0, 0.7);
+	visibility: hidden;
+	opacity: 0;
+
+    &__container {
+        margin: 70px auto;
+        background-color: #282c35;
+        box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+        width: 50%;
+        height: 100%;
+        position: relative;
+        overflow: auto;
+
+        transition: all 5s ease-in-out;
+    }
+
+    &__image {
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        max-height: 400px;
+        height: 100%;
+    }
+
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    &__title {
+        padding-top: 40px;
+        color: #ffa7c4;
+    }
+
+    &__actors {
+        margin-top: 220px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        
+    }
+
+    &__actor-image {
+        width: 100px;
+        height: auto;
+    }
+
+}
+.open {
+    visibility: visible;
+    opacity: 1;
+    overflow: auto;
+    z-index: 20;
+}
